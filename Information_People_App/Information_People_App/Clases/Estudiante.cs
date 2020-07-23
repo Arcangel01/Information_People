@@ -9,11 +9,11 @@ namespace Information_People_App.Clases
     class Estudiante
     {
         public List<string> elementos = new List<string>();
-        private string nombre { get; set; }
-        private string apellidos;
-        private string identificacion;
-        private string estado_civil;
-        private string curso_matriculado;
+        public string nombre { get; set; }
+        public string apellidos { get; set; }
+        public string identificacion { get; set; }
+        public string estado_civil { get; set; }
+        public string curso_matriculado { get; set; }
 
 
         public Estudiante()
@@ -22,24 +22,12 @@ namespace Information_People_App.Clases
 
         //public string estadoCivil(string NuevoEstado)
         //{
-        //    try
-        //    {
-        //        estado_civil = NuevoEstado;
-        //    } catch(Exception ex)
-        //    {
-        //        return ex.Message;
-        //    }
         //}
 
-        public Boolean matriculaCurso(string nombreN, string apellidosN, string id, string estadoC, string nuevo_curso_matriculado)
+        public Boolean matriculaCurso()
         {
             try
             {
-                nombre = nombreN;
-                apellidos = apellidosN;
-                identificacion = id;
-                estado_civil = estadoC;
-                curso_matriculado = nuevo_curso_matriculado;
                 elementos.Add(nombre);
                 elementos.Add(apellidos);
                 elementos.Add(identificacion);

@@ -9,21 +9,21 @@ namespace Information_People_App.Clases
     class PersonalServicio
     {
         public List<string> elementos = new List<string>();
-        private string nombre;
-        private string apellidos;
-        private string identificacion;
-        private string estado_civil;
-        private string fecha_incorporacion;
-        private int nro_despacho;
-        private string seccion;
+        public string nombre { get; set; }
+        public string apellidos { get; set; }
+        public string identificacion { get; set; }
+        public string estado_civil { get; set; }
+        public string fecha_incorporacion { get; set; }
+        public int nro_despacho { get; set; }
+        public string seccion { get; set; }
 
         public PersonalServicio()
         {
         }
 
-        public string estadoCivil(string NuevoEstado)
+        public string estadoCivil(string id, string NuevoEstado)
         {
-            estado_civil = NuevoEstado;
+            
             return "";
         }
 
@@ -33,30 +33,28 @@ namespace Information_People_App.Clases
             return "";
         }
 
-        public bool addPersonaServ(string nombreN, string apellidosN, string id, string estadoC, string incorp, int despacho, string section)
+        public Boolean addPersonaServ()
         {
-            nombre = nombreN;
-            apellidos = apellidosN;
-            identificacion = id;
-            estado_civil = estadoC;
-            fecha_incorporacion = incorp;
-            nro_despacho = despacho;
-            seccion = section;
+            try
+            {
+                elementos.Add(nombre);
+                elementos.Add(apellidos);
+                elementos.Add(identificacion);
+                elementos.Add(estado_civil);
+                elementos.Add(fecha_incorporacion);
+                elementos.Add(Convert.ToString(nro_despacho));
+                elementos.Add(seccion);
 
-            elementos.Add(nombre);
-            elementos.Add(apellidos);
-            elementos.Add(identificacion);
-            elementos.Add(estado_civil);
-            elementos.Add(fecha_incorporacion);
-            elementos.Add(Convert.ToString(nro_despacho));
-            elementos.Add(seccion);
-
-            return true;
+                return true;
+            } catch(Exception ex)
+            {
+                return false;
+            }
         }
 
-        public List<string> listado()
+        public List<string> listadoP()
         {
-            return elementos.ToList();
+            return elementos;
         }
     }
 }

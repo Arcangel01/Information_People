@@ -50,7 +50,7 @@ namespace Information_People_App.Clases
             return listado();
         }
 
-        public string porNombramiento(int hora_extra)
+        public string porNombramiento()
         {
             nombre = "Juan";
             apellidos = "Marulanda";
@@ -60,6 +60,7 @@ namespace Information_People_App.Clases
             nro_despacho = 1288;
             departamento = "Ing sistemas";
             sueldo = 780;
+            int hora_extra = 6;
             double valor_horas_extras = (precio_hora * 1.5) * hora_extra;
             sueldo = sueldo + valor_horas_extras;
             return listado();
